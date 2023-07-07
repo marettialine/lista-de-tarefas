@@ -1,0 +1,186 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+:root{
+    --1: #222435;
+    --2: #7d83b9;
+    --3: #2d3046;
+    --4: #363b65;
+    --5: #363f88;
+    --6: #151627;
+    --7: #1e1f2e;
+    --8: #4d506e;
+    --9: #ff004c;
+}
+
+body{
+    background-color: var(--1);
+    font-family: 'Roboto', sans-serif;
+}
+
+*,
+body {
+	scrollbar-width: thin;
+	scrollbar-color: var(--4) transparent;
+}
+*::-webkit-scrollbar,
+body::-webkit-scrollbar {
+	width: 6px;
+	height: 6px; /* A altura só é vista quando a rolagem é horizontal */
+}
+*::-webkit-scrollbar-thumb{
+	border-radius: 5px;
+}
+body::-webkit-scrollbar-thumb{
+	border-radius: 0px;
+}
+*::-webkit-scrollbar-track,
+body::-webkit-scrollbar-track {
+	background: var(--4);
+	padding: 2px;
+}
+*::-webkit-scrollbar-thumb,
+body::-webkit-scrollbar-thumb {
+	background-color: var(--2);
+}
+
+*:focus{
+    outline: none;
+}
+
+h1{
+    font-weight: 900;
+    color: var(--2);
+    text-align: center;
+}
+
+form{
+    display: flex;
+    position: relative;
+    width: 600px;
+    height: 50px;
+    margin: 30px auto;
+    margin-bottom: 60px;
+}
+
+input{
+    display: flex;
+    width: 100%;
+    height: 50px;
+    background-color: var(--3);
+    border: none;
+    padding: 0px 30px;
+    font-size: 16px;
+    border-radius: 10px;
+    color: white;
+}
+
+button.add{
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: var(--4);
+    border: none;
+    color: white;
+    cursor: pointer;
+    padding: 10px 25px;
+    height: 50px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    transition: all 0.2s;
+}
+button.add:hover{
+    color: white;
+    background-color: var(--5);
+}
+
+.icone-central{
+    max-width: 70%;
+}
+
+.listaTarefas{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 600px;
+    margin: auto;
+    gap: 10px;
+}
+
+.item{
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid var(--4);
+    cursor: pointer;
+    transition: all 0.2s;
+    margin-bottom: 10px;
+}
+.item:hover{
+    background-color: var(--6);
+}
+.item span{
+    width: 100%;
+    color: white;
+    margin-right: 10px;
+    padding: 10px 15px;
+    text-align: start;
+}
+.item.completo{
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+    background-color: var(--7);
+    border: none;
+    opacity: 0.4;
+    text-align: start;
+}
+.item.completo span{
+    width: 100%;
+    color: var(--8);
+    margin-right: 10px;
+    padding: 10px 15px;
+    text-decoration: line-through;
+}
+
+button.del{
+    background: none;
+    border: none;
+    padding: 15px;
+    cursor: pointer;
+    color: var(--8);
+    transition: all 0.2s;
+}
+
+button.del:hover{
+    background: var(--9);
+    border: none;
+    padding: 15px;
+    cursor: pointer;
+    color: white;
+}
+
+button.deleteAll{
+    border: 1px solid var(--9);
+    background: none;
+    padding: 15px;
+    color: var(--9);
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.2s;
+    margin: 30px auto;
+    width: 100%;
+}
+
+button.deleteAll:hover{
+    background: var(--9);
+    color: white;
+}
+
+@media screen and (max-width: 900px){
+    form{
+        width: 100%;
+    }
+    .listaTarefas{
+        width: 100%;
+    }
+}
